@@ -13,7 +13,6 @@ const CodeMirrorPanel = props => {
     options,
     placeholder,
     code,
-    fileSize,
     info,
     errorMessage,
     theme
@@ -37,7 +36,6 @@ const CodeMirrorPanel = props => {
           value={code}
           theme={theme}
         />
-        {options.fileSize && <div className={styles.fileSize}>{fileSize} bytes</div>}
       </div>
       {info && <pre className={infoClass}>{info}</pre>}
       {errorMessage && <pre className={errorClass}>{errorMessage}</pre>}

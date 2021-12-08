@@ -131,17 +131,23 @@
 //   wrap: false
 // }`;
 
-const options = `// edit terser options
-{
+const options = {
   module: true,
-  compress: {},
-  mangle: {},
-  output: {},
-  parse: {},
-  rename: {},
-}`;
+  ecma: 2021,
+  compress: false,
+  toplevel: true,
+  mangle: true,
+  format: {
+    beautify: true,
+    comments: 'all',
+    indent_level: 2,
+    keep_numbers: true,
+    keep_quoted_props: true,
+    quote_style: 3,
+  },
+};
 
 /* eslint-disable-next-line no-eval */
-export const evalOptions = (opts) => eval(`(${opts||options})`)
+export const evalOptions = (opts) => options;
 
 export default options;

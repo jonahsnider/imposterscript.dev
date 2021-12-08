@@ -6,12 +6,12 @@ const Header = () => {
   return (
     <div className={styles.container}>
       <header>
-        <a href="https://terser.org">
+        <a href="https://imposterscript.dev">
           <img
-            src="https://terser.org/img/terser-square-logo.png"
-            alt="Terser logo"
+            src="/imposterscript.png"
+            alt="ImposterScript logo"
           />
-          <h2>terser</h2>
+          <h2>ImposterScript</h2>
         </a>
       </header>
     </div>

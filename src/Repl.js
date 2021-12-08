@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { debounce, cloneDeep } from 'lodash-es';
 
 import CodeMirrorPanel from './CodeMirrorPanel';
-import { getCodeSizeInBytes } from './lib/helpers';
 import terserOptions, { evalOptions } from './lib/terser-options';
 
 import styles from './Repl.module.css';
@@ -13,15 +12,12 @@ class Repl extends Component {
   state = {
     optionsCode: terserOptions,
     code: '// write or paste code here\n\n',
-    minified: "// terser's ouput will be shown here",
+    minified: '// imposterscript will be shown here',
     terserOptions: evalOptions(),
-    rawSize: 0,
-    minifiedSize: 0
   };
 
   options = {
     lineWrapping: true,
-    fileSize: true
   };
 
   render() {
@@ -31,20 +27,10 @@ class Repl extends Component {
           <div className={styles.panels}>
             <div className={styles.verticalSplit}>
               <CodeMirrorPanel
-                className={styles.codeMirrorPanelOptions}
-                code={this.state.optionsCode}
-                onChange={this._updateTerserOptions}
-                options={{ lineWrapping: true }}
-                theme="paraiso-light"
-                errorMessage={this.state.optionsErrorMessage}
-                placeholder="Edit terser config here"
-              />
-              <CodeMirrorPanel
-                className={styles.codeMirrorPanelInput}
+                className={styles.codeMirrorPanel}
                 code={this.state.code}
                 onChange={this._updateCode}
                 options={this.options}
-                fileSize={this.state.rawSize}
                 theme="paraiso-light"
                 errorMessage={this.state.errorMessage}
                 placeholder="Write or paste code here"
@@ -54,9 +40,8 @@ class Repl extends Component {
               className={styles.codeMirrorPanel}
               code={this.state.minified}
               options={this.options}
-              fileSize={this.state.minifiedSize}
               theme="paraiso-dark"
-              placeholder="Terser output will be shown here"
+              placeholder="Imposterscript output will be shown here"
             />
           </div>
         </div>
@@ -64,21 +49,20 @@ class Repl extends Component {
     );
   }
 
-  _updateCode = code => {
+  _updateCode = (code) => {
     this.setState({
       code,
-      rawSize: getCodeSizeInBytes(code)
     });
     this._minifyToState(code);
   };
 
-  _updateTerserOptions = options => {
+  _updateTerserOptions = (options) => {
     try {
       const parsedOptions = evalOptions(options);
 
       this.setState({
         terserOptions: parsedOptions,
-        optionsErrorMessage: null
+        optionsErrorMessage: null,
       });
     } catch (e) {
       this.setState({ optionsErrorMessage: e.message });
@@ -88,7 +72,7 @@ class Repl extends Component {
   };
 
   _minifyToState = debounce(
-    code => this._minify(code, this._persistState),
+    (code) => this._minify(code, this._persistState),
     DEBOUNCE_DELAY
   );
 
@@ -105,8 +89,7 @@ class Repl extends Component {
       } else {
         this.setState({
           minified: result.code,
-          minifiedSize: getCodeSizeInBytes(result.code),
-          errorMessage: null
+          errorMessage: null,
         });
       }
     } catch (e) {
