@@ -1,0 +1,14 @@
+[build]
+base = "./"
+command = "yarn run build"
+publish = "./build"
+
+[[redirects]]
+from = "/psbl/script.js"
+to = "https://plausible.io/js/plausible.js"
+status = 200
+
+[[redirects]]
+from = "/api/event"
+to = "https://plausible.io/api/event"
+status = 202
