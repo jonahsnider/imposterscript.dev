@@ -1,11 +1,12 @@
 {
-  "short_name": "Terser REPL",
-  "name": "Terser Online REPL",
+  "short_name": "ImposterScript REPL",
+  "name": "ImposterScript REPL",
+  "description": "ImposterScript is a subset of JavaScript which uses the ඞ character for all variable names. Convert your code using our interactive REPL now!",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "imposterscript.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
