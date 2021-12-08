@@ -11,8 +11,18 @@ const DEBOUNCE_DELAY = 500;
 class Repl extends Component {
   state = {
     optionsCode: terserOptions,
-    code: '// write or paste code here\n\n',
-    minified: '// imposterscript will be shown here',
+    code: `// add two numbers
+function sum(a, b) {
+  return a + b;
+}
+
+console.log(sum(1, 2)); // 3`,
+    minified: `// add two numbers
+function ඞ(ඞ, ඞඞ) {
+  return ඞ + ඞඞ;
+}
+
+console.log(ඞ(1, 2)); // 3`,
     terserOptions: evalOptions(),
   };
 
