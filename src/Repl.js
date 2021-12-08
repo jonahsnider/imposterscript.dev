@@ -16,13 +16,17 @@ function sum(a, b) {
   return a + b;
 }
 
-console.log(sum(1, 2)); // 3`,
+const array = [ 1, 2, 3, 4 ];
+
+console.log(array.reduce(sum, 0));`,
     minified: `// add two numbers
 function ඞ(ඞ, ඞඞ) {
   return ඞ + ඞඞ;
 }
 
-console.log(ඞ(1, 2)); // 3`,
+const ඞඞ = [ 1, 2, 3, 4 ];
+
+console.log(ඞඞ.reduce(ඞ, 0));`,
     terserOptions: evalOptions(),
   };
 
