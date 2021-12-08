@@ -2,7 +2,7 @@
     background-color: #20232a;
     color: #fff;
     /* min-height: 50px; */
-    padding: 8px 0;
+    padding: 16px 0;
     width: 100%;
     transform: translateZ(0);
 }
@@ -15,6 +15,9 @@
     position: relative;
     text-align: left;
     margin-left: 1.20%;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .container header img {
@@ -25,12 +28,30 @@
     margin-right: 10px;
 }
 
+.container header img.small {
+    max-width: 65%;
+    height: 65%;
+}
+
+.container header div {
+    margin-right: 4em;
+}
+
 .container header h2 {
     display: block;
     font-size: 1.25em;
     line-height: 18px;
     margin: 0;
     position: relative;
+}
+
+.container header h3 {
+    display: block;
+    font-size: 1.25em;
+    line-height: 16px;
+    margin: 0;
+    position: relative;
+    font-weight: 500;
 }
 
 .container a {
