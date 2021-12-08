@@ -1,30 +1,41 @@
-# repl
+# ImposterScript
 
-## About
+ImposterScript is a subset of JavaScript which uses the **ඞ** character for all variable names.
 
-This is the repo for terser's online repl available at [try.terser.org](https://try.terser.org).
+[**Convert your code using our interactive REPL now!**](https://imposterscript.dev/)
 
-### Screenshot
+## Example
 
-![Terser REPL screenshot](https://user-images.githubusercontent.com/38240/63511165-5afcae80-c4d8-11e9-9011-acfb7d58484d.png)
+If you passed in this code:
 
-## Development
+```js
+// add two numbers
+function sum(a, b) {
+  return a + b;
+}
 
-In the project directory, you can run:
+const array = [ 1, 2, 3, 4 ];
 
-### Start
-`yarn start`
+console.log(array.reduce(sum, 0));
+```
 
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You would get this output:
 
-### Test
-`yarn test`
+```js
+// add two numbers
+function ඞ(ඞ, ඞඞ) {
+  return ඞ + ඞඞ;
+}
 
-Runs tests with Jest.
+const ඞඞ = [ 1, 2, 3, 4 ];
 
-### Build
-`npm run build`
+console.log(ඞඞ.reduce(ඞ, 0));
+```
 
-Builds the app for production to the `build` folder.
+**ImposterScript is a subset of JavaScript, that means you can run that code in any JS runtime (Node, browser, etc).**
 
+## How it works
+
+This is a fork of Terser's REPL which is more oriented towards making your code look stupid rather than minifying it.
+
+It uses [a fork of Terser itself](https://www.npmjs.com/package/@jonahsnider/amongus-terser) which alters the variable mangling logic for considerably funnier output.
