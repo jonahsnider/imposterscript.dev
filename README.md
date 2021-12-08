@@ -32,7 +32,7 @@ const ඞඞ = [ 1, 2, 3, 4 ];
 console.log(ඞඞ.reduce(ඞ, 0));
 ```
 
-**ImposterScript is a subset of JavaScript, that means you can run that code in any JS runtime (Node, browser, etc).**
+**ImposterScript is a subset of JavaScript, that means you can run generated code in any JS runtime (Node, browser, etc).**
 
 ## How it works
 
