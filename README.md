@@ -1,5 +1,7 @@
 # ImposterScript
 
+[![ImposterScript logo](./public/banner.png)](https://imposterscript.dev/)
+
 ImposterScript is a subset of JavaScript which uses the **ඞ** character for all variable names.
 
 [**Convert your code using our interactive REPL now!**](https://imposterscript.dev/)
